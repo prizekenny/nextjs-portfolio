@@ -1,9 +1,8 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+require("dotenv").config();
 
-const RESEND_API_KEY = "re_EHKZQPq7_LUnpxLfvktdzDKHxtpDEcYao";
-
-const resend = new Resend(RESEND_API_KEY);
+const resend = new Resend(process.env.RESEND_API_KEY);
 const fromEmail = "onboarding@resend.dev"; //process.env.FROM_EMAIL;
 const toEmail = "prizekenny@gmail.com";
 
