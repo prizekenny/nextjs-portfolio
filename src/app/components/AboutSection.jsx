@@ -3,18 +3,33 @@ import React, { useTransition, useState } from "react";
 import Image from "next/image";
 import TabButton from "./TabButton";
 
+let introductionPara1 =
+  "I am a software engineer with over 14 years of experience specializing in C++ " +
+  "desktop development. My background includes creating high-performance desktop " +
+  "applications and managing complex software projects. Currently, I am expanding " +
+  "my skill set through the Software Development Program at SAIT, with a focus on " +
+  "modern technologies.";
+let introductionPara2 =
+  "I am seeking part-time software development opportunities while also offering free " +
+  "services to small businesses and startups, including the development of websites, " +
+  "mobile apps, and desktop applications. I am eager to connect, contribute, and help " +
+  "businesses grow their digital presence. If you're interested in collaborating or " +
+  "have any opportunities, feel free to contact me!";
+
 const TAB_DATA = [
   {
     title: "Skills",
     id: "skills",
     content: (
       <ul className="list-disc pl-2">
-        <li>Node.js</li>
-        <li>Express</li>
-        <li>PostgreSQL</li>
-        <li>Sequelize</li>
-        <li>JavaScript</li>
-        <li>React</li>
+        <li>C++/Qt/MFC</li>
+        <li>Python</li>
+        <li>React/Next.js</li>
+        <li>C#</li>
+        <li>Java</li>
+        <li>SQL</li>
+        <li>Machine Vision/Halcon/VisionPro/OpenCV</li>
+        <li>Motion Control</li>
       </ul>
     ),
   },
@@ -23,8 +38,8 @@ const TAB_DATA = [
     id: "education",
     content: (
       <ul className="list-disc pl-2">
-        <li>Fullstack Academy of Code</li>
-        <li>University of California, Santa Cruz</li>
+        <li>Southern Alberta Institute of Technology</li>
+        <li>Wuhan University of Science and Technology</li>
       </ul>
     ),
   },
@@ -33,8 +48,8 @@ const TAB_DATA = [
     id: "certifications",
     content: (
       <ul className="list-disc pl-2">
-        <li>AWS Cloud Practitioner</li>
-        <li>Google Professional Cloud Developer</li>
+        <li>Ultimate AWS Certified Cloud Practitioner CLF-C02</li>
+        <li>The Ultimate React Course 2024: React, Redux&More </li>
       </ul>
     ),
   },
@@ -57,12 +72,10 @@ const AboutSection = () => {
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
-            I am a full stack web developer with a passion for creating
-            interactive and responsive web applications. I have experience
-            working with JavaScript, React, Redux, Node.js, Express, PostgreSQL,
-            Sequelize, HTML, CSS, and Git. I am a quick learner and I am always
-            looking to expand my knowledge and skill set. I am a team player and
-            I am excited to work with others to create amazing applications.
+            {introductionPara1}
+            <br></br>
+            <br></br>
+            {introductionPara2}
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton

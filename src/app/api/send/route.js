@@ -1,8 +1,11 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-const fromEmail = process.env.FROM_EMAIL;
+const RESEND_API_KEY = "re_EHKZQPq7_LUnpxLfvktdzDKHxtpDEcYao";
+
+const resend = new Resend(RESEND_API_KEY);
+const fromEmail = "onboarding@resend.dev"; //process.env.FROM_EMAIL;
+const toEmail = "prizekenny@gmail.com";
 
 export async function POST(req, res) {
   const { email, subject, message } = await req.json();
@@ -10,10 +13,11 @@ export async function POST(req, res) {
   try {
     const data = await resend.emails.send({
       from: fromEmail,
-      to: [fromEmail, email],
+      to: [toEmail],
       subject: subject,
       react: (
         <>
+          <h1>From: {email}</h1>
           <h1>{subject}</h1>
           <p>Thank you for contacting us!</p>
           <p>New message submitted:</p>
