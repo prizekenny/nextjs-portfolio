@@ -7,30 +7,31 @@ import { motion, useInView } from "framer-motion";
 const projectsData = [
   {
     id: 1,
-    title: "React Portfolio Website",
-    description: "Project 1 description",
-    image: "/images/projects/1.png",
+    title: "Quiz",
+    description: "A simple quiz website",
+    image: "/images/projects/quiz.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://quiz-xi-lac.vercel.app/",
+    previewUrl: "https://quiz-xi-lac.vercel.app/",
   },
   {
     id: 2,
-    title: "Potography Portfolio Website",
-    description: "Project 2 description",
-    image: "/images/projects/2.png",
+    title: "Movie Search",
+    description: "A movie search demo",
+    image: "/images/projects/movie-search.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://search-movie-six.vercel.app/",
+    previewUrl: "https://search-movie-six.vercel.app/",
   },
   {
     id: 3,
-    title: "E-commerce Application",
-    description: "Project 3 description",
-    image: "/images/projects/3.png",
+    title: "Map View",
+    description:
+      "A map viewer to add some marks on map and record the location",
+    image: "/images/projects/map-view.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://map-view-phi.vercel.app/",
+    previewUrl: "https://map-view-phi.vercel.app/",
   },
   {
     id: 4,
@@ -89,6 +90,11 @@ const ProjectsSection = () => {
           onClick={handleTagChange}
           name="All"
           isSelected={tag === "All"}
+        />
+        <ProjectTag
+          onClick={handleTagChange}
+          name="Desktop"
+          isSelected={tag === "Desktop"}
         />
         <ProjectTag
           onClick={handleTagChange}
