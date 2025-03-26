@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import NavLink from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const navLinks = [
   {
@@ -15,10 +16,10 @@ const navLinks = [
     title: "Projects",
     path: "#projects",
   },
-  {
-    title: "Contact",
-    path: "#contact",
-  },
+  // {
+  //   title: "Contact",
+  //   path: "#contact",
+  // },
 ];
 
 const Navbar = () => {
@@ -56,13 +57,33 @@ const Navbar = () => {
           )}
         </div>
         <div className="menu hidden md:block md:w-auto" id="navbar">
-          <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
-            {navLinks.map((link, index) => (
-              <li key={index}>
-                <NavLink href={link.path} title={link.title} />
-              </li>
-            ))}
-          </ul>
+          <div className="flex items-center space-x-8">
+            <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
+              {navLinks.map((link, index) => (
+                <li key={index}>
+                  <NavLink href={link.path} title={link.title} />
+                </li>
+              ))}
+            </ul>
+            <div className="flex space-x-2 ml-4">
+              <Link
+                href="https://www.linkedin.com/in/prizekenny"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white"
+              >
+                <FaLinkedin className="h-6 w-6" />
+              </Link>
+              <Link
+                href="https://github.com/prizekenny"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white"
+              >
+                <FaGithub className="h-6 w-6" />
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
       {navbarOpen ? <MenuOverlay links={navLinks} /> : null}
